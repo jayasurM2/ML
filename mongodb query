@@ -1,0 +1,493 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOEXaRFKwEw98epXUMcYR17",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jayasurM2/ML/blob/main/mongodb%20query\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "WH-G-2XzBdDD"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"hello\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aofSxjINB2yV",
+        "outputId": "1ff2d7f5-b3b8-4a0f-e497-def5d9ada94f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "hello\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!pip install dnspython\n",
+        "!pip install pymongo[srv]\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "A9N1RMumB6um",
+        "outputId": "c1ef86d0-d2e5-46e0-b660-8e1fd26f1d40"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Requirement already satisfied: dnspython in /usr/local/lib/python3.8/dist-packages (2.2.1)\n",
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Requirement already satisfied: pymongo[srv] in /usr/local/lib/python3.8/dist-packages (4.3.3)\n",
+            "Requirement already satisfied: dnspython<3.0.0,>=1.16.0 in /usr/local/lib/python3.8/dist-packages (from pymongo[srv]) (2.2.1)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pymongo\n",
+        "client = pymongo.MongoClient(\"mongodb+srv://Jayasuriyaa:Suriya27@cluster0.qyd69sg.mongodb.net/?retry=writes=true&w=majority\") \n",
+        "db= client.DT2\n",
+        "records=db.guvi\n",
+        "d1={\"name\":\"jayasuriya\", \"age\":11}\n",
+        "records.insert_one(d1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 901
+        },
+        "id": "3wjkfl-AN5XS",
+        "outputId": "18c2b966-dcce-4ae2-a44d-73c4115ffb1d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "InvalidURI",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36msplit_options\u001b[0;34m(opts, validate, warn, normalize)\u001b[0m\n\u001b[1;32m    329\u001b[0m         \u001b[0;32melif\u001b[0m \u001b[0mand_idx\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 330\u001b[0;31m             \u001b[0moptions\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_parse_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mopts\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"&\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    331\u001b[0m         \u001b[0;32melif\u001b[0m \u001b[0msemi_idx\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36m_parse_options\u001b[0;34m(opts, delim)\u001b[0m\n\u001b[1;32m    160\u001b[0m     \u001b[0;32mfor\u001b[0m \u001b[0muriopt\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mopts\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msplit\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mdelim\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 161\u001b[0;31m         \u001b[0mkey\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalue\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0muriopt\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msplit\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"=\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    162\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mkey\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlower\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0;34m\"readpreferencetags\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mValueError\u001b[0m: too many values to unpack (expected 2)",
+            "\nDuring handling of the above exception, another exception occurred:\n",
+            "\u001b[0;31mInvalidURI\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-6-b24ec1832270>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mpymongo\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mclient\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpymongo\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mMongoClient\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"mongodb+srv://Jayasuriyaa:Suriya27@cluster0.qyd69sg.mongodb.net/?retry=writes=true&w=majority\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0mdb\u001b[0m\u001b[0;34m=\u001b[0m \u001b[0mclient\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mDT2\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mrecords\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mdb\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mguvi\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0md1\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m{\u001b[0m\u001b[0;34m\"name\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\"jayasuriya\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"age\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;36m11\u001b[0m\u001b[0;34m}\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/mongo_client.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, host, port, document_class, tz_aware, connect, type_registry, **kwargs)\u001b[0m\n\u001b[1;32m    734\u001b[0m                         \u001b[0mkeyword_opts\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcased_key\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"connecttimeoutms\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtimeout\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    735\u001b[0m                     )\n\u001b[0;32m--> 736\u001b[0;31m                 res = uri_parser.parse_uri(\n\u001b[0m\u001b[1;32m    737\u001b[0m                     \u001b[0mentity\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    738\u001b[0m                     \u001b[0mport\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36mparse_uri\u001b[0;34m(uri, default_port, validate, warn, normalize, connect_timeout, srv_service_name, srv_max_hosts)\u001b[0m\n\u001b[1;32m    509\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    510\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mopts\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 511\u001b[0;31m             \u001b[0moptions\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msplit_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mopts\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalidate\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mwarn\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mnormalize\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    512\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0msrv_service_name\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    513\u001b[0m         \u001b[0msrv_service_name\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0moptions\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"srvServiceName\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mSRV_SERVICE_NAME\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36msplit_options\u001b[0;34m(opts, validate, warn, normalize)\u001b[0m\n\u001b[1;32m    336\u001b[0m             \u001b[0;32mraise\u001b[0m \u001b[0mValueError\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    337\u001b[0m     \u001b[0;32mexcept\u001b[0m \u001b[0mValueError\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 338\u001b[0;31m         \u001b[0;32mraise\u001b[0m \u001b[0mInvalidURI\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"MongoDB URI options are key=value pairs.\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    339\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    340\u001b[0m     \u001b[0moptions\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_handle_security_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0moptions\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mInvalidURI\u001b[0m: MongoDB URI options are key=value pairs."
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pymongo\n",
+        "client = pymongo.MongoClient(\"mongodb+srv://Jayasuriyaa:Suriya27@cluster0.qyd69sg.mongodb.net/?retry=writes=true&w=majority\")\n",
+        "db= client.DT3\n",
+        "records=db.guvi\n",
+        "dt2={\"name\":\"jayasuriya\"}\n",
+        "records.insert_one(dt2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 432
+        },
+        "id": "MOiy9_IHZZ2N",
+        "outputId": "5990ca0c-e480-4d36-e5c4-9630edc78bc4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "InvalidURI",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36msplit_options\u001b[0;34m(opts, validate, warn, normalize)\u001b[0m\n\u001b[1;32m    329\u001b[0m         \u001b[0;32melif\u001b[0m \u001b[0mand_idx\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 330\u001b[0;31m             \u001b[0moptions\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_parse_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mopts\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"&\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    331\u001b[0m         \u001b[0;32melif\u001b[0m \u001b[0msemi_idx\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36m_parse_options\u001b[0;34m(opts, delim)\u001b[0m\n\u001b[1;32m    160\u001b[0m     \u001b[0;32mfor\u001b[0m \u001b[0muriopt\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mopts\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msplit\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mdelim\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 161\u001b[0;31m         \u001b[0mkey\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalue\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0muriopt\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msplit\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"=\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    162\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mkey\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlower\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0;34m\"readpreferencetags\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mValueError\u001b[0m: too many values to unpack (expected 2)",
+            "\nDuring handling of the above exception, another exception occurred:\n",
+            "\u001b[0;31mInvalidURI\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-9-dc7f90a12e25>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mpymongo\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mclient\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpymongo\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mMongoClient\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"mongodb+srv://Jayasuriyaa:Suriya27@cluster0.qyd69sg.mongodb.net/?retry=writes=true&w=majority\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0mdb\u001b[0m\u001b[0;34m=\u001b[0m \u001b[0mclient\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mDT3\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mrecords\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mdb\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mguvi\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mdt2\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m{\u001b[0m\u001b[0;34m\"name\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\"jayasuriya\"\u001b[0m\u001b[0;34m}\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/mongo_client.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, host, port, document_class, tz_aware, connect, type_registry, **kwargs)\u001b[0m\n\u001b[1;32m    734\u001b[0m                         \u001b[0mkeyword_opts\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcased_key\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"connecttimeoutms\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtimeout\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    735\u001b[0m                     )\n\u001b[0;32m--> 736\u001b[0;31m                 res = uri_parser.parse_uri(\n\u001b[0m\u001b[1;32m    737\u001b[0m                     \u001b[0mentity\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    738\u001b[0m                     \u001b[0mport\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36mparse_uri\u001b[0;34m(uri, default_port, validate, warn, normalize, connect_timeout, srv_service_name, srv_max_hosts)\u001b[0m\n\u001b[1;32m    509\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    510\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mopts\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 511\u001b[0;31m             \u001b[0moptions\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msplit_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mopts\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalidate\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mwarn\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mnormalize\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    512\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0msrv_service_name\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    513\u001b[0m         \u001b[0msrv_service_name\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0moptions\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"srvServiceName\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mSRV_SERVICE_NAME\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36msplit_options\u001b[0;34m(opts, validate, warn, normalize)\u001b[0m\n\u001b[1;32m    336\u001b[0m             \u001b[0;32mraise\u001b[0m \u001b[0mValueError\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    337\u001b[0m     \u001b[0;32mexcept\u001b[0m \u001b[0mValueError\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 338\u001b[0;31m         \u001b[0;32mraise\u001b[0m \u001b[0mInvalidURI\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"MongoDB URI options are key=value pairs.\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    339\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    340\u001b[0m     \u001b[0moptions\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_handle_security_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0moptions\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mInvalidURI\u001b[0m: MongoDB URI options are key=value pairs."
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!pip install dnspython\n",
+        "!pip install pymongo[srv]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7SUEv6xeNEUd",
+        "outputId": "f4aac92c-61fe-4dd2-85a3-146bb05d617b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Requirement already satisfied: dnspython in /usr/local/lib/python3.8/dist-packages (2.3.0)\n",
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Requirement already satisfied: pymongo[srv] in /usr/local/lib/python3.8/dist-packages (4.3.3)\n",
+            "Requirement already satisfied: dnspython<3.0.0,>=1.16.0 in /usr/local/lib/python3.8/dist-packages (from pymongo[srv]) (2.3.0)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "DpA_8r4zbcZs"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "uAV_m2EqNZ1X"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pymongo\n",
+        "client = pymongo.MongoClient(\"mongodb+srv://Jayasuriyaa:Suriya27@cluster0.qyd69sg.mongodb.net/?retry=Writes=true&w=majority\")\n",
+        "db= client.DT3\n",
+        "records=db.guvi\n",
+        "dt2={\"name\":\"jayasuriya\"}\n",
+        "records.insert_one(dt2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 432
+        },
+        "id": "ZIcz20r1NaZx",
+        "outputId": "75d3e963-4e1b-4c54-b267-21d633ad97b9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "InvalidURI",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36msplit_options\u001b[0;34m(opts, validate, warn, normalize)\u001b[0m\n\u001b[1;32m    329\u001b[0m         \u001b[0;32melif\u001b[0m \u001b[0mand_idx\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 330\u001b[0;31m             \u001b[0moptions\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_parse_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mopts\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"&\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    331\u001b[0m         \u001b[0;32melif\u001b[0m \u001b[0msemi_idx\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36m_parse_options\u001b[0;34m(opts, delim)\u001b[0m\n\u001b[1;32m    160\u001b[0m     \u001b[0;32mfor\u001b[0m \u001b[0muriopt\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mopts\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msplit\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mdelim\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 161\u001b[0;31m         \u001b[0mkey\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalue\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0muriopt\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msplit\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"=\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    162\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mkey\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlower\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0;34m\"readpreferencetags\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mValueError\u001b[0m: too many values to unpack (expected 2)",
+            "\nDuring handling of the above exception, another exception occurred:\n",
+            "\u001b[0;31mInvalidURI\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-4-f27930e6ed15>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mpymongo\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mclient\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpymongo\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mMongoClient\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"mongodb+srv://Jayasuriyaa:Suriya27@cluster0.qyd69sg.mongodb.net/?retry=Writes=true&w=majority\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0mdb\u001b[0m\u001b[0;34m=\u001b[0m \u001b[0mclient\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mDT3\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mrecords\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mdb\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mguvi\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mdt2\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m{\u001b[0m\u001b[0;34m\"name\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\"jayasuriya\"\u001b[0m\u001b[0;34m}\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/mongo_client.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, host, port, document_class, tz_aware, connect, type_registry, **kwargs)\u001b[0m\n\u001b[1;32m    734\u001b[0m                         \u001b[0mkeyword_opts\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcased_key\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"connecttimeoutms\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtimeout\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    735\u001b[0m                     )\n\u001b[0;32m--> 736\u001b[0;31m                 res = uri_parser.parse_uri(\n\u001b[0m\u001b[1;32m    737\u001b[0m                     \u001b[0mentity\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    738\u001b[0m                     \u001b[0mport\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36mparse_uri\u001b[0;34m(uri, default_port, validate, warn, normalize, connect_timeout, srv_service_name, srv_max_hosts)\u001b[0m\n\u001b[1;32m    509\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    510\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mopts\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 511\u001b[0;31m             \u001b[0moptions\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msplit_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mopts\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalidate\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mwarn\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mnormalize\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    512\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0msrv_service_name\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    513\u001b[0m         \u001b[0msrv_service_name\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0moptions\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"srvServiceName\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mSRV_SERVICE_NAME\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36msplit_options\u001b[0;34m(opts, validate, warn, normalize)\u001b[0m\n\u001b[1;32m    336\u001b[0m             \u001b[0;32mraise\u001b[0m \u001b[0mValueError\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    337\u001b[0m     \u001b[0;32mexcept\u001b[0m \u001b[0mValueError\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 338\u001b[0;31m         \u001b[0;32mraise\u001b[0m \u001b[0mInvalidURI\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"MongoDB URI options are key=value pairs.\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    339\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    340\u001b[0m     \u001b[0moptions\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_handle_security_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0moptions\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mInvalidURI\u001b[0m: MongoDB URI options are key=value pairs."
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for x in records.find({\"name\":\"jayasuriya\"}):\n",
+        "  print(x)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 183
+        },
+        "id": "mfgWtz1FP1hX",
+        "outputId": "7197e713-8665-4bb1-96f3-bc1cd42bd160"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-5-17c6c7be9752>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mfor\u001b[0m \u001b[0mx\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mrecords\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mfind\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m{\u001b[0m\u001b[0;34m\"name\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\"jayasuriya\"\u001b[0m\u001b[0;34m}\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m   \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mx\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mNameError\u001b[0m: name 'records' is not defined"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pymongo\n",
+        "client = pymongo.MongoClient(\"mongodb+srv://Jayasuriyaa:Suriya27@cluster0.qyd69sg.mongodb.net/?retry=Writes=true&w=majority\")\n",
+        "suriya= client.DT3\n",
+        "records=db.suriya\n",
+        "dt2={\"name\":\"jayasuriya\",\"address\":\"chennai\"}\n",
+        "records.insert_one(dt2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 432
+        },
+        "id": "5g4RDVq9TKsP",
+        "outputId": "f82ed3da-f763-46c2-fd73-7d38a649e880"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "InvalidURI",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36msplit_options\u001b[0;34m(opts, validate, warn, normalize)\u001b[0m\n\u001b[1;32m    329\u001b[0m         \u001b[0;32melif\u001b[0m \u001b[0mand_idx\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 330\u001b[0;31m             \u001b[0moptions\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_parse_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mopts\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"&\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    331\u001b[0m         \u001b[0;32melif\u001b[0m \u001b[0msemi_idx\u001b[0m \u001b[0;34m>=\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36m_parse_options\u001b[0;34m(opts, delim)\u001b[0m\n\u001b[1;32m    160\u001b[0m     \u001b[0;32mfor\u001b[0m \u001b[0muriopt\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mopts\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msplit\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mdelim\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 161\u001b[0;31m         \u001b[0mkey\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalue\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0muriopt\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msplit\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"=\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    162\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mkey\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlower\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0;34m\"readpreferencetags\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mValueError\u001b[0m: too many values to unpack (expected 2)",
+            "\nDuring handling of the above exception, another exception occurred:\n",
+            "\u001b[0;31mInvalidURI\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-6-5f6852eaf802>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mpymongo\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mclient\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpymongo\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mMongoClient\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"mongodb+srv://Jayasuriyaa:Suriya27@cluster0.qyd69sg.mongodb.net/?retry=Writes=true&w=majority\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0msuriya\u001b[0m\u001b[0;34m=\u001b[0m \u001b[0mclient\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mDT3\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mrecords\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mdb\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msuriya\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mdt2\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m{\u001b[0m\u001b[0;34m\"name\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\"jayasuriya\"\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\"address\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\"chennai\"\u001b[0m\u001b[0;34m}\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/mongo_client.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, host, port, document_class, tz_aware, connect, type_registry, **kwargs)\u001b[0m\n\u001b[1;32m    734\u001b[0m                         \u001b[0mkeyword_opts\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcased_key\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"connecttimeoutms\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtimeout\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    735\u001b[0m                     )\n\u001b[0;32m--> 736\u001b[0;31m                 res = uri_parser.parse_uri(\n\u001b[0m\u001b[1;32m    737\u001b[0m                     \u001b[0mentity\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    738\u001b[0m                     \u001b[0mport\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36mparse_uri\u001b[0;34m(uri, default_port, validate, warn, normalize, connect_timeout, srv_service_name, srv_max_hosts)\u001b[0m\n\u001b[1;32m    509\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    510\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mopts\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 511\u001b[0;31m             \u001b[0moptions\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msplit_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mopts\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalidate\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mwarn\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mnormalize\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    512\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0msrv_service_name\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    513\u001b[0m         \u001b[0msrv_service_name\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0moptions\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"srvServiceName\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mSRV_SERVICE_NAME\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.8/dist-packages/pymongo/uri_parser.py\u001b[0m in \u001b[0;36msplit_options\u001b[0;34m(opts, validate, warn, normalize)\u001b[0m\n\u001b[1;32m    336\u001b[0m             \u001b[0;32mraise\u001b[0m \u001b[0mValueError\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    337\u001b[0m     \u001b[0;32mexcept\u001b[0m \u001b[0mValueError\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 338\u001b[0;31m         \u001b[0;32mraise\u001b[0m \u001b[0mInvalidURI\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"MongoDB URI options are key=value pairs.\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    339\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    340\u001b[0m     \u001b[0moptions\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_handle_security_options\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0moptions\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mInvalidURI\u001b[0m: MongoDB URI options are key=value pairs."
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#need to insert \n",
+        "#FIND\n",
+        "a=rceords.find_one({\"name\":\"\"}):\n",
+        "print(a)\n",
+        "# projection\n",
+        "a=records.find({\"\":\"\"}{\"\":True}):\n",
+        "print(a)\n",
+        "# filter\n",
+        "a=records.find({$or{\"name\":\"jayasuriya\"}}):\n",
+        "print(a)\n",
+        "# to find the greater/less than \n",
+        "a= records.find({\"req\":{\"$gte\":req}})\n",
+        "for x in a:\n",
+        "  print(x)\n",
+        "# not equal to \n",
+        "a=records.find({\"age\":{\"$ne\":10}})\n",
+        "for x in a:\n",
+        "  print(x)\n",
+        "#in and not in\n",
+        "for x in records.find({\"list\":{\"$in\":[\"req\"]}}):\n",
+        "  print(x)\n",
+        "for x in records.find({\"list\":{\"$nin\":[\"req\"]}}):\n",
+        "  print(x)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 130
+        },
+        "id": "amtXllMLU1Lk",
+        "outputId": "34fc37fd-6fc5-43ce-b9d4-65e789a91b84"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-7-99dabe9b3a7d>\"\u001b[0;36m, line \u001b[0;32m2\u001b[0m\n\u001b[0;31m    a=rceords.find_one({\"name\":\"\"}):\u001b[0m\n\u001b[0m                                   ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "p6dvV7NFeXgs"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "# update:\n",
+        "myquery ={\"name\":\"\"}\n",
+        "nevalues={\"$set\":{\"update value\"}}\n",
+        "records.update_one(myquery,newvalues)\n",
+        "# to delete \n",
+        "myquery ={\"req id\"}\n",
+        "newvalues={\"$unset\":{\"delete doc\":True}}\n",
+        "records.update_one(myquery,newvalues)\n",
+        "#update timestamp\n",
+        "myquery={\"\"}\n",
+        "up={\"$currentDate\":{\"lastModified\":True}}\n",
+        "records.update_one(myquery,up)\n"
+      ],
+      "metadata": {
+        "id": "fzadnxnmeYt3"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "HeJCGtxhXf8n"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "list1=[{\"name\":\"jayasuriya\",\"age\":10},\n",
+        "       {\"name\":\"tangaraj\",\"age\":12},\n",
+        "       {\"name\":\"naveen\",\"age\":13}]\n",
+        "\n",
+        "suriya.insert_many(list1)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 200
+        },
+        "id": "J5hCBhhrWuS0",
+        "outputId": "8f2ca329-0d65-4b5f-c95d-6f96a4989df8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-10-9978181ef5d6>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      3\u001b[0m        {\"name\":\"naveen\",\"age\":13}]\n\u001b[1;32m      4\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 5\u001b[0;31m \u001b[0msuriya\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0minsert_many\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mlist1\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m: name 'suriya' is not defined"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import mongo"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 304
+        },
+        "id": "cXWYXbckY-lE",
+        "outputId": "c4d58171-b61b-4975-b584-e421fd27a870"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "ModuleNotFoundError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-11-75990a487842>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mimport\u001b[0m \u001b[0mmongo\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'mongo'",
+            "",
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0;32m\nNOTE: If your import is failing due to a missing package, you can\nmanually install dependencies using either !pip or !apt.\n\nTo view examples of installing some common dependencies, click the\n\"Open Examples\" button below.\n\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n"
+          ],
+          "errorDetails": {
+            "actions": [
+              {
+                "action": "open_url",
+                "actionText": "Open Examples",
+                "url": "/notebooks/snippets/importing_libraries.ipynb"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "print(\"hello\")"
+      ],
+      "metadata": {
+        "id": "wA-gkpr1BpZI"
+      }
+    }
+  ]
+}
